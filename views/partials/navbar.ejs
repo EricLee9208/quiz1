@@ -1,0 +1,46 @@
+<nav style="background-color: #3c565b" class="navbar">
+  <div class="container-fluid">
+    <a style="color: white; font-size: x-large" class="navbar-brand" href="/">
+      <img
+        src="/image/Twemoji_1f413.svg.png"
+        alt="Logo"
+        width="50"
+        height="44"
+        class="d-inline-block align-text-top"
+      />
+    </a>
+
+    <ul class="nav justify-content-end">
+      <li style="margin-right: 10vw" class="nav-item">
+        <a style="color: white; font-size: x-large" class="nav-link" href="/cluck/new"
+          >Cluck!</a
+        >
+      </li>
+      <% if (username) {%>
+      <li style="margin-right: 2vw" class="nav-item">
+        <div>
+          <span
+            style="margin-right: 5vw; color: GRAY; font-size: x-large"
+            class="nav-link"
+            ><%- username %>
+          </span>
+        </li>
+    <li>
+          <form class="nav-link" action="/sign_out" method="POST">
+            <button class="btn btn-secondary" type="submit">Sign Out</button>
+          </form>
+        </div>
+      </li>
+      <% } else { %>
+      <li style="margin-right: 10vw" class="nav-item">
+        <a
+          style="color: white; font-size: x-large"
+          class="nav-link"
+          href="/sign_in"
+          >Sign In</a
+        >
+      </li>
+      <% } %>
+    </ul>
+  </div>
+</nav>
