@@ -1,24 +1,37 @@
 <%- include('../partials/header.ejs') %>
-<div style="width: 99vw; height: 50vh; margin: 10px">
-  <form
-    style="border: solid black 1px; padding: 40px"
-    action="/cluck/new"
-    method="POST"
-  >
+<div
+  class="card"
+  style="
+    width: 99vw;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    border: solid black 1px;
+    padding: 100x;
+  "
+>
+  <form action="/cluck/new" method="POST">
     <div class="mb-3">
-      <label for="content" class="form-label">Content</label>
+      <label style="font-size: x-large" for="content" class="form-label"
+        >Content</label
+      >
       <textarea
+        style="margin-top: 2vh"
         name="content"
         class="form-control"
         id="exampleFormControlTextarea1"
-        rows="3"
+        rows="5"
         placeholder="Whatchoo cluckin' 'bout"
       ></textarea>
     </div>
 
-    <div class="mb-3">
-      <label for="url" class="form-label">Image Url</label>
+    <div style="margin-top: 5vh" class="mb-3">
+      <label style="font-size: x-large" for="url" class="form-label"
+        >Image Url</label
+      >
       <input
+        style="margin-top: 2vh"
         type="text"
         name="imageUrl"
         class="form-control"
@@ -26,7 +39,14 @@
         placeholder="https://exampleURL.com"
       />
     </div>
-    <input type="submit" class="btn btn-primary" value="Cluck!" />
+    <div style="float: right; margin-top: 2vh">
+      <input
+        style="width: 15em; height: 3em"
+        type="submit"
+        class="btn btn-primary"
+        value="Cluck!"
+      />
+    </div>
   </form>
 </div>
 <%- include('../partials/footer.ejs') %>

@@ -1,33 +1,33 @@
-<nav style="background-color: #3c565b" class="navbar">
+<nav style="background-color: #1DA1F2" class="navbar">
   <div class="container-fluid">
     <a style="color: white; font-size: x-large" class="navbar-brand" href="/">
       <img
         src="/image/Twemoji_1f413.svg.png"
         alt="Logo"
-        width="50"
-        height="44"
+        width="70"
+        height="64"
         class="d-inline-block align-text-top"
       />
     </a>
 
     <ul class="nav justify-content-end">
       <li style="margin-right: 10vw" class="nav-item">
-        <a style="color: white; font-size: x-large" class="nav-link" href="/cluck/new"
+        <a style="color: white; font-size: x-large" class="nav-link btn btn-primary" href="/cluck/new"
           >Cluck!</a
         >
       </li>
       <% if (username) {%>
-      <li style="margin-right: 2vw" class="nav-item">
+      <li style="margin-right: 0.5vw" class="nav-item">
         <div>
           <span
-            style="margin-right: 5vw; color: GRAY; font-size: x-large"
+            style="margin-right: 2vw; color: #14171A; font-size: x-large"
             class="nav-link"
             ><%- username %>
           </span>
         </li>
     <li>
-          <form class="nav-link" action="/sign_out" method="POST">
-            <button class="btn btn-secondary" type="submit">Sign Out</button>
+          <form  action="/sign_out" method="POST">
+            <button style="color: white; font-size: x-large" class="nav-link btn btn-success" type="submit">Sign Out</button>
           </form>
         </div>
       </li>
@@ -35,7 +35,7 @@
       <li style="margin-right: 10vw" class="nav-item">
         <a
           style="color: white; font-size: x-large"
-          class="nav-link"
+          class="nav-link btn btn-success"
           href="/sign_in"
           >Sign In</a
         >

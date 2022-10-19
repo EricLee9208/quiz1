@@ -1,83 +1,116 @@
 <%- include('../partials/header.ejs') %>
 <!-- asd -->
-<% for( let post of cluck ) { %>
-
-<div
-  class="card d-flex align-items-center justify-content-center"
-  style="
-    margin: auto;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    width: 50%;
-    border: 2px solid black;
-    padding: 30px;
-  "
->
-  <div class="card-body">
-    <img
+<div style="display: flex">
+  <div id="trend" style="width: 20vw">
+    <div
+      class="card"
       style="
-        border-radius: 50%;
-        width: 50px;
-        height: 4vh;
-        float: left;
-        margin-right: 5px;
+        background-color: white;
+        border: solid black 1px;
+        height: 50vh;
+        width: 35vw;
+        margin: auto;
+        margin-bottom: 10px;
+        margin-left: 6vw;
+        margin-top: 10px;
+        border: 2px solid black;
+        padding: 10px;
+        overflow: scroll;
       "
-      src="/image/png-transparent-rooster-chicken-bird-icon-cock-avatar-love-heroes-heart.png"
-      alt="avater"
-    />
-    <div style="float: right; width: 30vw">
-      <!-- aasd -->
-      <% let time = post.createdAt; %>
-      <!-- aasd -->
-      <% let date = new Date(time); %>
-      <!-- aasd -->
-      <% let timeStamp = date.getTime(); %>
-      <!-- aasd -->
-      <% let now = new Date(); %>
-      <!-- aasd -->
-      <% let result = "" %>
-      <!-- aasd -->
-      <% let secondsPast = Math.floor((now.getTime() - timeStamp) / 1000); %>
-      <!-- aasd -->
-      <% console.log(secondsPast) %>
-      <!-- aasd -->
-      <% if( secondsPast <= 10){ %>
-      <!-- aasd -->
-      <% result = "Now" %>
-      <!-- aasd -->
-      <% } else if (secondsPast <= 60) { %>
-      <!-- aasd -->
-      <% result = parseInt(Math.floor(secondsPast)) + " seconds ago"; %>
-      <!-- aasd -->
-      <% } else if (secondsPast <= 3600) {%>
-      <!-- aasd -->
-      <% result = parseInt(secondsPast / 60) + " minutes ago"; %>
-      <!-- aasd -->
-      <% } else if (secondsPast <= 86400) { %>
-      <!-- aasd -->
-      <% result = parseInt(secondsPast / 3600) + " hours ago"; %>
-      <!-- aasd -->
-      <% } else {%>
-      <!-- aasd -->
-      <% result = parseInt(Math.floor(secondsPast / 86400)) + " days ago"; %>
-      <!-- aasd -->
-      <% } %>
-      <!-- aasd -->
-
-      <h5 class="card-title"><%- post.username %> ● <%- result %></h5>
-      <p class="card-text"><%- post.content %></p>
-      <% if (post.imageUrl) { %>
-      <img
-        class="card-img"
-        src="<%- post.imageUrl  %> "
-        alt="<%- post.username  %> content image "
-      />
-      <% } %>
+    >
+      <h2>Trending Clucks</h2>
+      <ul style="list-style-type: none">
+        <li>Not</li>
+        <li>Sure</li>
+        <li>How</li>
+        <li>To</li>
+        <li>Add hashtag info to the data within the same post request..</li>
+        <li>dang....</li>
+      </ul>
     </div>
   </div>
+  <div style="width: 80vw; margin-left: 15vw">
+    <% for( let post of cluck ) { %>
+
+    <div
+      class="card d-flex align-items-center justify-content-center"
+      style="
+        margin: auto;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        width: 50vw;
+        border: 2px solid black;
+        padding: 30px;
+      "
+    >
+      <div class="card-body">
+        <img
+          style="
+            border-radius: 50%;
+            width: 50px;
+            height: 4vh;
+            float: left;
+            margin-right: 5px;
+          "
+          src="/image/png-transparent-rooster-chicken-bird-icon-cock-avatar-love-heroes-heart.png"
+          alt="avater"
+        />
+        <div style="float: right; width: 30vw">
+          <!-- aasd -->
+          <% let time = post.createdAt; %>
+          <!-- aasd -->
+          <% let date = new Date(time); %>
+          <!-- aasd -->
+          <% let timeStamp = date.getTime(); %>
+          <!-- aasd -->
+          <% let now = new Date(); %>
+          <!-- aasd -->
+          <% let result = "" %>
+          <!-- aasd -->
+          <% let secondsPast = Math.floor((now.getTime() - timeStamp) / 1000);
+          %>
+          <!-- aasd -->
+
+          <!-- aasd -->
+          <% if( secondsPast <= 10){ %>
+          <!-- aasd -->
+          <% result = "Just Now" %>
+          <!-- aasd -->
+          <% } else if (secondsPast <= 60) { %>
+          <!-- aasd -->
+          <% result = "Just Now" %>
+          <!-- aasd -->
+          <% } else if (secondsPast <= 3600) {%>
+          <!-- aasd -->
+          <% result = parseInt(secondsPast / 60) + " minutes ago"; %>
+          <!-- aasd -->
+          <% } else if (secondsPast <= 86400) { %>
+          <!-- aasd -->
+          <% result = parseInt(secondsPast / 3600) + " hours ago"; %>
+          <!-- aasd -->
+          <% } else {%>
+          <!-- aasd -->
+          <% result = parseInt(Math.floor(secondsPast / 86400)) + " days ago";
+          %>
+          <!-- aasd -->
+          <% } %>
+          <!-- aasd -->
+
+          <h5 class="card-title"><%- post.username %> ● <%- result %></h5>
+          <p class="card-text"><%- post.content %></p>
+          <% if (post.imageUrl) { %>
+          <img
+            class="card-img"
+            src="<%- post.imageUrl  %> "
+            alt="<%- post.username  %> content image "
+          />
+          <% } %>
+        </div>
+      </div>
+    </div>
+
+    <% } %>
+    <!-- asdasd -->
+  </div>
 </div>
-
-<% } %>
-<!-- asdasd -->
-
 <%- include('../partials/footer.ejs')%>

@@ -1,16 +1,57 @@
 <%- include('../partials/header.ejs') %>
-<form action="/sign_in" method="POST">
-  <div style="width: 20em" class="text-center" class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label">User Name</label>
-    <input
-      type="text"
-      name="username"
-      class="form-control text-center"
-      id="exampleFormControlInput1"
-      placeholder="Enter a username"
-    />
+<div style="display: flex">
+  <div style="width: 50vw; height: 80vh">
+    \
+    <div
+      style="
+        margin: auto;
+        margin-bottom: 10px;
+        margin-top: 30vh;
+        width: 50%;
+        border: 2px solid #1da1f2;
+        padding: 50px;
+        background-color: #1da1f2;
+      "
+      class="card d-flex align-items-center justify-content-center"
+    >
+      <h5>Welcome!</h5>
+      <form action="/sign_in" method="POST">
+        <div style="width: 20vw" class="text-center" class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">
+            Please Enter Your Username</label
+          >
+          <input
+            type="text"
+            name="username"
+            class="form-control text-center"
+            id="exampleFormControlInput1"
+            placeholder="Username"
+          />
 
-    <input class="btn btn-primary" type="submit" value="Sign In" />
+          <input
+            style="margin-top: 2vh"
+            class="btn btn-primary"
+            type="submit"
+            value="Sign In"
+          />
+        </div>
+      </form>
+    </div>
   </div>
-</form>
+  <div
+    style="
+      width: 50vw;
+      height: 100vh;
+      background-image: url(/image/background8.jpeg);
+      background-repeat: no-repeat;
+      background-size: cover;
+    "
+  >
+    <!-- <img
+      style="height: 60vh; position: relative; left: 18vw"
+      src="/image/Twemoji_1f413.svg.png"
+      alt=""
+    /> -->
+  </div>
+</div>
 <%- include('../partials/footer.ejs') %>
